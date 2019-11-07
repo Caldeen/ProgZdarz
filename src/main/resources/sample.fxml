@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controller">
+   <children>
+      <TableView fx:id="DriverTableView" layoutY="29.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="Col1" />
+          <TableColumn prefWidth="75.0" text="2" />
+        </columns>
+      </TableView>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Kierowcy">
+            <items>
+              <MenuItem fx:id="MenuDodaj" mnemonicParsing="false" onAction="#show" text="Dodaj" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Harmonogram">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Wynagrodzenia">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <Glow />
+         </effect>
+      </MenuBar>
+   </children>
+</AnchorPane>
