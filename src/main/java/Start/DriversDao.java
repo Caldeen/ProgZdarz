@@ -26,11 +26,12 @@ public class DriversDao implements Dao<Driver> {
             entManager.close();
         }
     }
-    public void add(int id,String firstName,String lastName){
+    public void add(int id,String firstName,String lastName,double salary){
             Driver driver =new Driver();
             driver.setId(id);
             driver.setFirstName(firstName);
             driver.setLastName(lastName);
+            driver.setSalary(salary);
             add(driver);
     }
     @Override

@@ -16,7 +16,16 @@ public class Driver implements Serializable  {
     private String firstName;
     @Column(name ="lastName",nullable = false)
     private String lastName;
+    @Column(name = "salary",nullable = false)
+    private double salary;
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
     @Override
     public String toString() {
