@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface Dao<T> {
 
-    void add(T t);
-    void del(int id);
-    T get(int id);
-    ObservableList<T> getAll();
+    void add(T t); //C
+    void del(int id);//D
+    T get(int id);//R
+    ObservableList<T> getAll();//R
+    void update(T t,String[] args);
 
 }

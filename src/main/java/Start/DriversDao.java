@@ -27,12 +27,7 @@ public class DriversDao implements Dao<Driver> {
         }
     }
     public void add(int id,String firstName,String lastName,double salary){
-            Driver driver =new Driver();
-            driver.setId(id);
-            driver.setFirstName(firstName);
-            driver.setLastName(lastName);
-            driver.setSalary(salary);
-            add(driver);
+            add(new Driver(id,firstName,lastName,salary));
     }
     @Override
     public void del(int id){
@@ -43,7 +38,6 @@ public class DriversDao implements Dao<Driver> {
             entityTransaction.begin();
             Driver driver =entManager.find(Driver.class,id);
             entManager.remove(driver);
-            entManager.persist(driver);
             entityTransaction.commit();
         }catch (Exception e){
             if(entityTransaction!=null){
@@ -56,9 +50,9 @@ public class DriversDao implements Dao<Driver> {
     @Override
     public Driver get(int id) {
         EntityManager entManager = factory.createEntityManager();
-        String query="SELECT c FROM Driver c WHERE c.id = :custID";
+        String query="SELECT c FROM Driver c WHERE c.id = :driverID";
         TypedQuery<Driver> typedQuery=entManager.createQuery(query, Driver.class);
-        typedQuery.setParameter("custID",id);
+        typedQuery.setParameter("driverID",id);
         Driver driver =null;
         try {
             driver =typedQuery.getSingleResult();
@@ -85,5 +79,43 @@ public class DriversDao implements Dao<Driver> {
             entManager.close();
         }
         return null;
+    }
+    public Integer getMax (){
+        EntityManager entManager = factory.createEntityManager();
+        String query="SELECT max(id) FROM Driver ";
+        TypedQuery<Integer> typedQuery=entManager.createQuery(query, Integer.class);
+        Integer result;
+        try{
+            result = typedQuery.getSingleResult();
+            return result;
+        }catch (NoResultException e){
+            System.out.println("nothing");
+        }finally {
+            entManager.close();
+        }
+        return null;
+    }
+
+    @Override
+    public void update(Driver driver, String[] args) {
+        EntityManager entManager=factory.createEntityManager();
+        EntityTransaction entityTransaction=null;
+        try {
+            entityTransaction=entManager.getTransaction();
+            entityTransaction.begin();
+            Driver driverOld =entManager.find(Driver.class,driver.getId());
+            driverOld.setFirstName(driver.getFirstName());
+            driverOld.setLastName(driver.getLastName());
+            driverOld.setSalary(driver.getSalary());
+            driverOld.setHours_worked(driver.getHours_worked());
+            entManager.persist(driverOld);
+            entityTransaction.commit();
+        }catch (Exception e){
+            if(entityTransaction!=null){
+                entityTransaction.rollback();
+            }
+        }finally {
+            entManager.close();
+        }
     }
 }

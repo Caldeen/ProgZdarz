@@ -9,18 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controllers.ControllerMain">
    <children>
       <BorderPane layoutX="177.0" layoutY="178.0" prefHeight="800.0" prefWidth="1103.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <TableView fx:id="DriverTableView" maxWidth="400.0" prefHeight="771.0" prefWidth="99.0" BorderPane.alignment="CENTER" />
+            <TableView fx:id="DriverTableView" prefHeight="771.0" prefWidth="440.0" BorderPane.alignment="CENTER" />
          </left>
          <top>
             <MenuBar prefHeight="13.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
               <menus>
                 <Menu mnemonicParsing="false" text="Kierowcy">
                   <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openDelWindow" text="Usun kierowce" />
+                        <MenuItem fx:id="MenuAdd" mnemonicParsing="false" onAction="#openAddWindow" text="Dodaj kierowce" />
                     <MenuItem fx:id="MenuDodaj" mnemonicParsing="false" onAction="#show" text="Pokaż" />
+                        <MenuItem mnemonicParsing="false" onAction="#openUpdateWindow" text="Aktualizuj kierowce" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Harmonogram">
@@ -42,6 +45,9 @@
                </effect>
             </MenuBar>
          </top>
+         <right>
+            <TableView fx:id="moneyTableView" prefHeight="771.0" prefWidth="446.0" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
