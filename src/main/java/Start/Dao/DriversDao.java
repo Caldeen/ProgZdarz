@@ -1,10 +1,10 @@
-package Start;
+package Start.Dao;
 
+import Start.Model.Driver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import javax.persistence.*;
-import java.util.List;
 
 public class DriversDao implements Dao<Driver> {
     private static EntityManagerFactory factory=

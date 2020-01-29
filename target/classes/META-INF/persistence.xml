@@ -6,7 +6,7 @@
              version="2.1">
  <persistence-unit name="Zdarzz" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>Start.Driver</class>
+        <class>Start.Model.Driver</class>
         <properties> 
             <property name="javax.persistence.jdbc.Driver"
                       value="com.mariadb.jdbc.Driver"/>

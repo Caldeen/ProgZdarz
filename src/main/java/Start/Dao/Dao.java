@@ -1,4 +1,4 @@
-package Start;
+package Start.Dao;
 import javafx.collections.ObservableList;
 
 import javax.persistence.*;

@@ -1,14 +1,12 @@
 package Start.Controllers;
 
-import Start.Driver;
-import Start.DriversDao;
+import Start.Model.Driver;
+import Start.Dao.DriversDao;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import javax.persistence.criteria.CriteriaBuilder;
 
 public class ControllerUpdateDriver {
     private ControllerMain controllerMain;

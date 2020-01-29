@@ -1,7 +1,7 @@
 package Start.Controllers;
 
-import Start.Driver;
-import Start.DriversDao;
+import Start.Model.Driver;
+import Start.Dao.DriversDao;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

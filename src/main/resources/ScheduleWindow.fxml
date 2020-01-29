@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controllers.ControllerSchedule">
+   <children>
+      <Text layoutX="148.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz numer kierowcy, wiersza i dni pracy" wrappingWidth="372.7294921875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="UpdateButton" layoutX="228.0" layoutY="306.0" mnemonicParsing="false" onAction="#updateButtonAction" prefHeight="64.0" prefWidth="132.0" text="Zatwierdz" visible="false">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Text fx:id="outputText" layoutX="48.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="521.7294921875" />
+      <TextField fx:id="godzinyPracyTextField" layoutX="141.0" layoutY="251.0" prefHeight="26.0" prefWidth="306.0" promptText="Godziny pracy" visible="false" />
+      <CheckBox fx:id="ponCheckBox" layoutX="189.0" layoutY="151.0" mnemonicParsing="false" text="Poniedzialek" />
+      <CheckBox fx:id="wtCheckBox" layoutX="310.0" layoutY="151.0" mnemonicParsing="false" text="Wtorek" />
+      <CheckBox fx:id="srCheckBox" layoutX="189.0" layoutY="188.0" mnemonicParsing="false" text="Srode" />
+      <CheckBox fx:id="czwCheckBox" layoutX="310.0" layoutY="188.0" mnemonicParsing="false" text="Czwartek" />
+      <CheckBox fx:id="ptCheckBox" layoutX="189.0" layoutY="229.0" mnemonicParsing="false" text="Piatek" />
+      <CheckBox fx:id="sobCheckBox" layoutX="310.0" layoutY="229.0" mnemonicParsing="false" text="Sobota" />
+      <CheckBox fx:id="niedzCheckbox" layoutX="246.0" layoutY="271.0" mnemonicParsing="false" text="Niedziela" />
+      <TextField fx:id="idTextField" layoutX="209.0" layoutY="45.0" onAction="#getDriverScheduleRowSet" onKeyTyped="#getDriverScheduleRowSet" />
+      <TextField fx:id="idWierszaTextField" layoutX="209.0" layoutY="111.0" onKeyTyped="#getDriverScheduleRowSet" />
+      <Text fx:id="driverText" layoutX="276.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
