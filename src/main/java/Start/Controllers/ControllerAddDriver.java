@@ -1,6 +1,7 @@
 package Start.Controllers;
 
 import Start.Dao.DriversDao;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -18,36 +19,53 @@ public class ControllerAddDriver {
     TextField surnameTextField;
     @FXML
     TextField salaryTextField;
-    @FXML
-    TextField idTextField;
-
-    private DriversDao driversDao = new DriversDao();
 
     public void addButtonAction() {
-        Integer id = driversDao.getMax()+1;
-        if(!idTextField.getText().equals("")){
-            id=Integer.parseInt(idTextField.getText());
-        }
-        outputText.setText("Wypelnij poprawnymi danymi, duplikaty niedozwolone");
-        outputText.setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
+        Task<Void> task=new Task<Void>() {
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                controllerMain.showDrivers();
+                controllerMain.showPay();
+                updateMessage("Success!");
+            }
 
-        outputText.setVisible(true);
-            driversDao.add(id,nameTextField.getText(),
-                    surnameTextField.getText(),Double.parseDouble(salaryTextField.getText()));
+            @Override
+            protected void running() {
+                super.running();
+                updateMessage("Running...");
+            }
 
+            @Override
+            protected void cancelled() {
+                super.cancelled();
+                updateMessage("Cancelled");
+            }
 
-        controllerMain.show();
-        controllerMain.showWynagrodzenie();
+            @Override
+            protected void failed() {
+                super.failed();
+                updateMessage("Failed ");
+            }
+
+            @Override
+            protected Void call() throws InterruptedException {
+                DriversDao driversDao = new DriversDao();
+                int id = driversDao.getMax()+1;
+                Thread.sleep(3000);
+                driversDao.add(id,nameTextField.getText(),
+                        surnameTextField.getText(),Double.parseDouble(salaryTextField.getText()));
+                return null;
+            }
+        };
+        controllerMain.statusText.textProperty().bind(task.messageProperty());
+        new Thread(task).start();
         stage.close();
+
     }
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-
-
-
-
-
     public void setControllerMain(ControllerMain controllerMain) {
         this.controllerMain = controllerMain;
     }

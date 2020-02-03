@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controllers.ControllerAddDriver">
    <children>
       <Text layoutX="141.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz atrybuty nowego kierowcy i dodaj" wrappingWidth="366.7294921875">
@@ -22,7 +21,6 @@
       <TextField fx:id="nameTextField" layoutX="141.0" layoutY="42.0" prefHeight="29.0" prefWidth="306.0" promptText="Imie" />
       <TextField fx:id="surnameTextField" layoutX="141.0" layoutY="101.0" prefHeight="29.0" prefWidth="306.0" promptText="Nazwisko" />
       <TextField fx:id="salaryTextField" layoutX="141.0" layoutY="171.0" prefHeight="29.0" prefWidth="306.0" promptText="Wynagrodzenie" />
-      <TextField fx:id="idTextField" layoutX="141.0" layoutY="232.0" prefHeight="29.0" prefWidth="306.0" promptText="Identyfikator ( opcjonalnie )" />
       <Text fx:id="outputText" layoutX="33.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="534.7294921875" />
    </children>
 </Pane>

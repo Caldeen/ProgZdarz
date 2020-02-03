@@ -9,12 +9,14 @@
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start.Controllers.ControllerMain">
    <children>
       <BorderPane layoutX="177.0" layoutY="178.0" prefHeight="800.0" prefWidth="1103.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <TableView fx:id="DriverTableView" prefHeight="771.0" prefWidth="415.0" BorderPane.alignment="CENTER" />
+            <TableView fx:id="driverTableView" prefHeight="771.0" prefWidth="415.0" BorderPane.alignment="CENTER" />
          </left>
          <top>
             <MenuBar prefHeight="10.0" prefWidth="1259.0" BorderPane.alignment="CENTER">
@@ -23,16 +25,16 @@
                   <items>
                         <MenuItem mnemonicParsing="false" onAction="#openDelWindow" text="Usun kierowce" />
                         <MenuItem fx:id="MenuAdd" mnemonicParsing="false" onAction="#openAddWindow" text="Dodaj kierowce" />
-                    <MenuItem fx:id="MenuDodaj" mnemonicParsing="false" onAction="#show" text="Pokaż" />
+                    <MenuItem fx:id="MenuDodaj" mnemonicParsing="false" onAction="#showDrivers" text="Pokaż" />
                         <MenuItem mnemonicParsing="false" onAction="#openUpdateWindow" text="Aktualizuj kierowce" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Harmonogram">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#delHarmonogramRow" text="Usun wiersz" />
+                        <MenuItem mnemonicParsing="false" onAction="#delScheduleRow" text="Usun wiersz" />
                         <MenuItem mnemonicParsing="false" onAction="#openScheduleWindow" text="Ustaw wiersz" />
-                        <MenuItem mnemonicParsing="false" onAction="#addHarmonogramRow" text="Dodaj wiersz" />
-                    <MenuItem mnemonicParsing="false" onAction="#updateHarmonogram" text="Pokaz" />
+                        <MenuItem mnemonicParsing="false" onAction="#addScheduleRow" text="Dodaj wiersz" />
+                    <MenuItem mnemonicParsing="false" onAction="#showSchedule" text="Pokaz" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Wynagrodzenia">
@@ -53,7 +55,7 @@
             <TableView fx:id="moneyTableView" prefHeight="771.0" prefWidth="343.0" BorderPane.alignment="CENTER" />
          </right>
          <center>
-            <TableView fx:id="harmonogramTableView" editable="true" prefHeight="771.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="scheduleTableView" editable="true" prefHeight="771.0" prefWidth="582.0" BorderPane.alignment="CENTER">
                <columns>
                   <TableColumn prefWidth="32.0" text="ID" />
                   <TableColumn prefWidth="114.0" text="Poniedziałek" />
@@ -66,6 +68,13 @@
                </columns>
             </TableView>
          </center>
+         <bottom>
+            <Text fx:id="statusText" fill="#1ed749" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="105.7294921875" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

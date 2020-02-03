@@ -19,15 +19,14 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Text fx:id="outputText" layoutX="48.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="521.7294921875" />
-      <TextField fx:id="godzinyPracyTextField" layoutX="141.0" layoutY="251.0" prefHeight="26.0" prefWidth="306.0" promptText="Godziny pracy" visible="false" />
+      <Text fx:id="outputText" fill="RED" layoutX="48.0" layoutY="301.0" stroke="RED" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="521.7294921875" />
       <CheckBox fx:id="ponCheckBox" layoutX="189.0" layoutY="151.0" mnemonicParsing="false" text="Poniedzialek" />
       <CheckBox fx:id="wtCheckBox" layoutX="310.0" layoutY="151.0" mnemonicParsing="false" text="Wtorek" />
       <CheckBox fx:id="srCheckBox" layoutX="189.0" layoutY="188.0" mnemonicParsing="false" text="Srode" />
       <CheckBox fx:id="czwCheckBox" layoutX="310.0" layoutY="188.0" mnemonicParsing="false" text="Czwartek" />
       <CheckBox fx:id="ptCheckBox" layoutX="189.0" layoutY="229.0" mnemonicParsing="false" text="Piatek" />
       <CheckBox fx:id="sobCheckBox" layoutX="310.0" layoutY="229.0" mnemonicParsing="false" text="Sobota" />
-      <CheckBox fx:id="niedzCheckbox" layoutX="246.0" layoutY="271.0" mnemonicParsing="false" text="Niedziela" />
+      <CheckBox fx:id="niedzCheckBox" layoutX="251.0" layoutY="260.0" mnemonicParsing="false" text="Niedziela" />
       <TextField fx:id="idTextField" layoutX="209.0" layoutY="45.0" onAction="#getDriverScheduleRowSet" onKeyTyped="#getDriverScheduleRowSet" />
       <TextField fx:id="idWierszaTextField" layoutX="209.0" layoutY="111.0" onKeyTyped="#getDriverScheduleRowSet" />
       <Text fx:id="driverText" layoutX="276.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">

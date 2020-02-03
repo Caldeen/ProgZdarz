@@ -1,6 +1,5 @@
 package Start.Dao;
 
-import Start.Model.Driver;
 import Start.Model.ScheduleRow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
