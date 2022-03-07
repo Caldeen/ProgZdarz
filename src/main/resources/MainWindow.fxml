@@ -55,7 +55,7 @@
             <TableView fx:id="moneyTableView" prefHeight="771.0" prefWidth="343.0" BorderPane.alignment="CENTER" />
          </right>
          <center>
-            <TableView fx:id="scheduleTableView" editable="true" prefHeight="771.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="scheduleTableView" editable="true" prefHeight="748.0" prefWidth="617.0" BorderPane.alignment="CENTER">
                <columns>
                   <TableColumn prefWidth="32.0" text="ID" />
                   <TableColumn prefWidth="114.0" text="Poniedziałek" />
